@@ -4,14 +4,12 @@ import 'package:fluttertd/models/habitation.dart';
 import 'package:fluttertd/services/habitation_service.dart';
 import 'package:fluttertd/views/habitation_details.dart';
 import 'package:fluttertd/views/share/habitation_features_widget.dart';
-import 'package:fluttertd/views/share/habitation_option.dart';
 import 'package:intl/intl.dart';
 
 class HabitationList extends StatelessWidget {
   final HabitationService service = HabitationService();
   late List<Habitation> _habitations;
   final bool isHouseList;
-  late List<OptionPayante> _optionpayantes;
 
   HabitationList(this.isHouseList, {Key? key})
       : super(key: key) {
@@ -94,7 +92,7 @@ class HabitationList extends StatelessWidget {
         child: ListView.builder(
           itemCount: _habitations.length,
           itemBuilder: (context, index) =>
-              _buildRow(_habitations[index], context, _optionpayantes[index]),
+              _buildRow(_habitations[index], context, service.getOptionPayantes()[index]),
           itemExtent: 285,
         ),
       ),

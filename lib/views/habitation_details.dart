@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertd/models/habitation.dart';
+import 'package:fluttertd/services/habitation_service.dart';
 import 'package:fluttertd/share/location_style.dart';
 import 'package:fluttertd/share/location_text_style.dart';
 import 'package:fluttertd/views/share/habitation_features_widget.dart';
-import 'package:fluttertd/views/share/habitation_option.dart';
 import 'package:intl/intl.dart';
 
 class HabitationDetails extends StatefulWidget {

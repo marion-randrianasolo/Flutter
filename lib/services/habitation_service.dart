@@ -1,14 +1,20 @@
 import 'package:fluttertd/models/habitation.dart';
 import 'package:fluttertd/models/habitations_data.dart';
+import 'package:fluttertd/models/option_data.dart';
+import 'package:fluttertd/models/optionpayantes_data.dart';
 import 'package:fluttertd/models/typehabitat_data.dart';
 
 class HabitationService{
   var _typehabitats;
   var _habitations;
+  var _options;
+  var _optionpayantes;
 
   HabitationService(){
     _typehabitats = TypehabitatData.buildList();
     _habitations = HabitationsData.buildList();
+    _options = OptionData.buildList();
+    _optionpayantes = OptionPayanteData.buildList();
   }
 
   List<TypeHabitat> getTypeHabitats() {
@@ -35,4 +41,13 @@ class HabitationService{
         .where((element) => element.typeHabitat.id == (isHouse ? 1 : 2))
         .toList();
  }
+
+ List<Option> getOptions() {
+    return _options;
+ }
+
+ List<OptionPayante> getOptionPayantes() {
+    return _optionpayantes;
+ }
+
 }
